@@ -10,11 +10,11 @@ const Hero = () => {
 	};
 
 	return (
-		<section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+		<section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
 			{/* Background decoration */}
 			<div className="absolute inset-0 overflow-hidden">
-				<div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
-				<div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+				<div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 dark:bg-primary-800 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-70 dark:opacity-30"></div>
+				<div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 dark:bg-blue-800 rounded-full mix-blend-multiply dark:mix-blend-soft-light filter blur-xl opacity-70 dark:opacity-30"></div>
 			</div>
 
 			<div className="container-max-width section-padding relative z-10">
@@ -24,7 +24,7 @@ const Hero = () => {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
 					>
-						<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+						<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
 							Hi, I'm <span className="gradient-text">John Doe</span>
 						</h1>
 					</motion.div>
@@ -34,7 +34,7 @@ const Hero = () => {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.2 }}
 					>
-						<h2 className="text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 font-light">
+						<h2 className="text-xl md:text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 mb-8 font-light">
 							Full Stack Developer & UI/UX Designer
 						</h2>
 					</motion.div>
@@ -44,7 +44,7 @@ const Hero = () => {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, delay: 0.4 }}
 					>
-						<p className="text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+						<p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
 							I craft beautiful, functional, and user-centered digital experiences. With a passion for
 							clean code and innovative design, I bring ideas to life through modern web technologies.
 						</p>
@@ -74,7 +74,7 @@ const Hero = () => {
 					>
 						<button
 							onClick={scrollToAbout}
-							className="text-gray-400 hover:text-primary-600 transition-colors duration-200 animate-bounce"
+							className="text-gray-400 dark:text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 animate-bounce"
 						>
 							<ChevronDown className="w-8 h-8" />
 						</button>

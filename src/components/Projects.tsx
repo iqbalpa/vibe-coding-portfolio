@@ -53,7 +53,7 @@ const Projects = () => {
 	const otherProjects = projects.filter((project) => !project.featured);
 
 	return (
-		<section id="projects" className="section-padding bg-white">
+		<section id="projects" className="section-padding bg-white dark:bg-gray-900">
 			<div className="container-max-width">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
@@ -62,8 +62,10 @@ const Projects = () => {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
+					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						Featured Projects
+					</h2>
+					<p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
 						A showcase of my recent work, featuring full-stack applications and creative solutions.
 					</p>
 				</motion.div>
@@ -86,7 +88,7 @@ const Projects = () => {
 									<img
 										src={project.image}
 										alt={project.title}
-										className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg"
+										className="w-full h-64 md:h-80 object-cover rounded-lg shadow-lg dark:shadow-xl"
 										loading="lazy"
 									/>
 									<div className="absolute inset-0 bg-primary-600 bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
@@ -96,24 +98,28 @@ const Projects = () => {
 							<div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
 								<div className="space-y-6">
 									<div className="flex items-center gap-4">
-										<span className="px-3 py-1 bg-primary-100 text-primary-800 text-sm font-medium rounded-full">
+										<span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-sm font-medium rounded-full">
 											Featured
 										</span>
-										<div className="flex items-center text-gray-500 text-sm">
+										<div className="flex items-center text-gray-500 dark:text-gray-400 text-sm">
 											<Calendar className="w-4 h-4 mr-1" />
 											{project.date}
 										</div>
 									</div>
 
-									<h3 className="text-2xl md:text-3xl font-bold text-gray-900">{project.title}</h3>
+									<h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+										{project.title}
+									</h3>
 
-									<p className="text-lg text-gray-600 leading-relaxed">{project.description}</p>
+									<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+										{project.description}
+									</p>
 
 									<div className="flex flex-wrap gap-2">
 										{project.technologies.map((tech) => (
 											<span
 												key={tech}
-												className="px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-md"
+												className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-md"
 											>
 												{tech}
 											</span>
@@ -125,7 +131,7 @@ const Projects = () => {
 											href={project.liveUrl}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors duration-200"
+											className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors duration-200"
 										>
 											<ExternalLink className="w-4 h-4" />
 											Live Demo
@@ -134,7 +140,7 @@ const Projects = () => {
 											href={project.githubUrl}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-700 font-medium transition-colors duration-200"
+											className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 font-medium transition-colors duration-200"
 										>
 											<Github className="w-4 h-4" />
 											Source Code
@@ -154,7 +160,9 @@ const Projects = () => {
 					viewport={{ once: true }}
 					className="text-center mb-12"
 				>
-					<h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Other Projects</h3>
+					<h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+						Other Projects
+					</h3>
 				</motion.div>
 
 				<div className="grid md:grid-cols-2 gap-8">
@@ -165,7 +173,7 @@ const Projects = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.8, delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className="bg-gray-50 rounded-lg overflow-hidden card-hover"
+							className="bg-gray-50 dark:bg-gray-800/50 rounded-lg overflow-hidden card-hover border dark:border-gray-700/50"
 						>
 							<img
 								src={project.image}
@@ -175,20 +183,22 @@ const Projects = () => {
 							/>
 							<div className="p-6">
 								<div className="flex items-center justify-between mb-3">
-									<h4 className="text-xl font-bold text-gray-900">{project.title}</h4>
-									<div className="flex items-center text-gray-500 text-sm">
+									<h4 className="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h4>
+									<div className="flex items-center text-gray-500 dark:text-gray-400 text-sm">
 										<Calendar className="w-4 h-4 mr-1" />
 										{project.date}
 									</div>
 								</div>
 
-								<p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
+								<p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+									{project.description}
+								</p>
 
 								<div className="flex flex-wrap gap-2 mb-4">
 									{project.technologies.map((tech) => (
 										<span
 											key={tech}
-											className="px-2 py-1 bg-white text-gray-700 text-xs font-medium rounded border"
+											className="px-2 py-1 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded border dark:border-gray-600"
 										>
 											{tech}
 										</span>
@@ -200,7 +210,7 @@ const Projects = () => {
 										href={project.liveUrl}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center gap-1 text-primary-600 hover:text-primary-700 text-sm font-medium transition-colors duration-200"
+										className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors duration-200"
 									>
 										<ExternalLink className="w-4 h-4" />
 										Live Demo
@@ -209,10 +219,10 @@ const Projects = () => {
 										href={project.githubUrl}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center gap-1 text-gray-600 hover:text-gray-700 text-sm font-medium transition-colors duration-200"
+										className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 font-medium transition-colors duration-200"
 									>
 										<Github className="w-4 h-4" />
-										Code
+										Source Code
 									</a>
 								</div>
 							</div>

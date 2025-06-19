@@ -45,7 +45,7 @@ const Experience = () => {
 	];
 
 	return (
-		<section id="experience" className="section-padding bg-gray-50">
+		<section id="experience" className="section-padding bg-gray-50 dark:bg-gray-800">
 			<div className="container-max-width">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
@@ -54,15 +54,17 @@ const Experience = () => {
 					viewport={{ once: true }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Work Experience</h2>
-					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
+					<h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+						Work Experience
+					</h2>
+					<p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
 						My professional journey building scalable applications and leading development teams.
 					</p>
 				</motion.div>
 
 				<div className="relative">
 					{/* Timeline line */}
-					<div className="absolute left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-primary-200"></div>
+					<div className="absolute left-4 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-primary-200 dark:bg-primary-700"></div>
 
 					<div className="space-y-12">
 						{experiences.map((exp, index) => (
@@ -77,24 +79,26 @@ const Experience = () => {
 								}`}
 							>
 								{/* Timeline dot */}
-								<div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-600 rounded-full border-4 border-white shadow-md z-10"></div>
+								<div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-600 dark:bg-primary-500 rounded-full border-4 border-white dark:border-gray-800 shadow-md z-10"></div>
 
 								{/* Content */}
 								<div className={`ml-12 md:ml-0 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"} md:w-1/2`}>
-									<div className="bg-white p-6 rounded-lg shadow-md card-hover">
+									<div className="bg-white dark:bg-gray-900/50 p-6 rounded-lg shadow-md dark:shadow-xl dark:shadow-black/10 card-hover border dark:border-gray-700/50">
 										<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-											<h3 className="text-xl font-bold text-gray-900 mb-1">{exp.title}</h3>
-											<div className="flex items-center text-primary-600 text-sm font-medium">
+											<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+												{exp.title}
+											</h3>
+											<div className="flex items-center text-primary-600 dark:text-primary-400 text-sm font-medium">
 												<Calendar className="w-4 h-4 mr-1" />
 												{exp.period}
 											</div>
 										</div>
 
 										<div className="flex flex-col sm:flex-row sm:items-center mb-4">
-											<h4 className="text-lg font-semibold text-primary-600 mb-1 sm:mb-0">
+											<h4 className="text-lg font-semibold text-primary-600 dark:text-primary-400 mb-1 sm:mb-0">
 												{exp.company}
 											</h4>
-											<div className="flex items-center text-gray-500 text-sm sm:ml-4">
+											<div className="flex items-center text-gray-500 dark:text-gray-400 text-sm sm:ml-4">
 												<MapPin className="w-4 h-4 mr-1" />
 												{exp.location}
 											</div>
@@ -102,8 +106,11 @@ const Experience = () => {
 
 										<ul className="space-y-2 mb-6">
 											{exp.description.map((item, i) => (
-												<li key={i} className="text-gray-700 flex items-start">
-													<span className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+												<li
+													key={i}
+													className="text-gray-700 dark:text-gray-300 flex items-start"
+												>
+													<span className="w-2 h-2 bg-primary-400 dark:bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
 													{item}
 												</li>
 											))}
@@ -113,7 +120,7 @@ const Experience = () => {
 											{exp.technologies.map((tech) => (
 												<span
 													key={tech}
-													className="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full"
+													className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-full"
 												>
 													{tech}
 												</span>
